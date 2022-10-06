@@ -31,7 +31,7 @@ jobs:
     - name: Run tests with Maven
       run: mvn test
     - uses: dorny/test-reporter@1
-      if: success() | failure()
+      if: success() || failure()
       with:
         name: Tests report
         path: './target/surefire-reports/*.xml'
